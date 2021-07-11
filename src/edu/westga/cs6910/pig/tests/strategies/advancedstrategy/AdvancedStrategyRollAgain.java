@@ -138,7 +138,7 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(0, 0, 49, 49);
 		assertEquals(true, result);
 	}
-	
+
 	/**
 	 * Test for when the number of rolls needed (using average roll score) to win is
 	 * the same for both players and is less than 7.
@@ -147,5 +147,15 @@ public class AdvancedStrategyRollAgain {
 	public void testShouldReturnTrueWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsLessThan7() {
 		boolean result = this.theStrategy.rollAgain(0, 0, 30, 30);
 		assertEquals(true, result);
+	}
+
+	/**
+	 * Test for when the number of rolls needed (using average roll score) to win is
+	 * the same for both players and is greater than 7.
+	 */
+	@Test
+	public void testShouldReturnFalseWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsGreaterThan7() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 63, 63);
+		assertEquals(false, result);
 	}
 }
