@@ -92,4 +92,22 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(0, 0, 100, -4);
 		assertEquals(false, result);
 	}
+
+	/**
+	 * Test for when the human is exactly 7 points away from the goal
+	 */
+	@Test
+	public void testShouldReturnTrueWhenHumanPlayerIsExactly7PointsAwayFromTheGoal() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 100, 7);
+		assertEquals(true, result);
+	}
+
+	/**
+	 * Test for when the human is less the 7 points away from the goal
+	 */
+	@Test
+	public void testShouldReturnTrueWhenHumanPlayerIsLessThan7PoinstAwayFromTheGoal() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 100, 3);
+		assertEquals(true, result);
+	}
 }
