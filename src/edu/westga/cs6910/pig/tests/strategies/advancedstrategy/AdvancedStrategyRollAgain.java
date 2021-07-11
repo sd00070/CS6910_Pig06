@@ -39,4 +39,21 @@ public class AdvancedStrategyRollAgain {
 		assertEquals(true, result);
 	}
 
+	/**
+	 * Test for when computer rolls after human scores no points at game start
+	 */
+	@Test
+	public void testShouldReturnTrueAtStartOfGameAfterHumanPlayerHasGoneWithNoPoints() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 100, 100);
+		assertEquals(true, result);
+	}
+	
+	/**
+	 * Test for when computer rolls after human scores some points at game start
+	 */
+	@Test
+	public void testShouldReturnTrueAtStartOfGameAfterHumanPlayerHasGoneWithSomePoints() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 100, 93);
+		assertEquals(true, result);
+	}
 }
