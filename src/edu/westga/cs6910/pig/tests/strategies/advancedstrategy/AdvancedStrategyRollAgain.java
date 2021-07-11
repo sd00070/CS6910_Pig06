@@ -47,7 +47,7 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(0, 0, 100, 100);
 		assertEquals(true, result);
 	}
-	
+
 	/**
 	 * Test for when computer rolls after human scores some points at game start
 	 */
@@ -55,5 +55,23 @@ public class AdvancedStrategyRollAgain {
 	public void testShouldReturnTrueAtStartOfGameAfterHumanPlayerHasGoneWithSomePoints() {
 		boolean result = this.theStrategy.rollAgain(0, 0, 100, 93);
 		assertEquals(true, result);
+	}
+
+	/**
+	 * Test for when computer has exactly the goal score
+	 */
+	@Test
+	public void testShouldReturnFalseWhenComputerPlayerHasExactlyTheGoalScore() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 0, 100);
+		assertEquals(false, result);
+	}
+
+	/**
+	 * Test for when the computer has more that the goal score
+	 */
+	@Test
+	public void testShouldReturnFalseWhenComputerPlayerHasMoreThanTheGoalScore() {
+		boolean result = this.theStrategy.rollAgain(0, 0, -4, 100);
+		assertEquals(false, result);
 	}
 }
