@@ -30,7 +30,7 @@ public class AdvancedStrategy implements PigStrategy {
 	@Override
 	public boolean rollAgain(int numberOfRollsSoFar, int pointsSoFarThisTurn, int pointsToGoal,
 			int opponentPointsToGoal) {
-		return false;
+		return true;
 	}
 
 }
