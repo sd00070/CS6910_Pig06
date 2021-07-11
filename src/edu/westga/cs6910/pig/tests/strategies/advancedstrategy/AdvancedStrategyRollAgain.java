@@ -119,13 +119,33 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(0, 0, 92, 100);
 		assertEquals(false, result);
 	}
-	
+
 	/**
 	 * Test for when the computer needs to make more rolls than the human to win
 	 */
 	@Test
 	public void testShouldReturnTrueWhenComputerPlayerNeedsGreaterNumberOfRollsToWin() {
 		boolean result = this.theStrategy.rollAgain(0, 0, 100, 92);
+		assertEquals(true, result);
+	}
+
+	/**
+	 * Test for when the number of rolls needed (using average roll score) to win is the
+	 * same for both players and is exactly 7.
+	 */
+	@Test
+	public void testShouldReturnTrueWhenBothPlayerNeedSameNumberOfRollsAndNumberOfRollsIsEqualTo7() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 49, 49);
+		assertEquals(true, result);
+	}
+	
+	/**
+	 * Test for when the number of rolls needed (using average roll score) to win is the
+	 * same for both players and is less than 7.
+	 */
+	@Test
+	public void testShouldReturnTrueWhenBothPlayerNeedSameNumberOfRollsAndNumberOfRollsIsLessThan7() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 30, 30);
 		assertEquals(true, result);
 	}
 }
