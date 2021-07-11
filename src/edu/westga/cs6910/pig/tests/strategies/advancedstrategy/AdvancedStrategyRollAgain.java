@@ -110,4 +110,13 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(0, 0, 100, 3);
 		assertEquals(true, result);
 	}
+
+	/**
+	 * Test for when the computer needs to make fewer rolls than the human to win
+	 */
+	@Test
+	public void testShouldReturnFalseWhenComputerPlayerNeedsFewerNumberOfRollsToWin() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 92, 100);
+		assertEquals(false, result);
+	}
 }
