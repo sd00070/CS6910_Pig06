@@ -74,4 +74,22 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(0, 0, -4, 100);
 		assertEquals(false, result);
 	}
+
+	/**
+	 * Test for when the human has exactly the goal score
+	 */
+	@Test
+	public void testShouldReturnFalseWhenHumanPlayerHasExactlyTheGoalScore() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 100, 0);
+		assertEquals(false, result);
+	}
+
+	/**
+	 * Test for when the human has more that the goal score
+	 */
+	@Test
+	public void testShouldReturnFalseWhenHumanPlayerHasMoreThanTheGoalScore() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 100, -4);
+		assertEquals(false, result);
+	}
 }
