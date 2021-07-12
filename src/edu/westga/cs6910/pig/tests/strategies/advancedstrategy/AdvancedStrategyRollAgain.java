@@ -94,6 +94,15 @@ public class AdvancedStrategyRollAgain {
 	}
 
 	/**
+	 * Test for when the computer has not rolled yet this turn
+	 */
+	@Test
+	public void testShouldReturnTrueIfComputerPlayerHasNotRolledThisTurnAndGameIsNotOver() {
+		boolean result = this.theStrategy.rollAgain(0, 0, 97, 97);
+		assertEquals(true, result);
+	}
+
+	/**
 	 * Test for when the human is exactly 7 points away from the goal
 	 */
 	@Test
