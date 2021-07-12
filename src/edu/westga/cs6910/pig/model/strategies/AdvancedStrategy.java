@@ -9,8 +9,7 @@ package edu.westga.cs6910.pig.model.strategies;
  * that its opponent to win (the "opponent within 7 points" rule overrides the
  * "fewer rolls" rule).
  * 
- * (as per the ComputerPlayer's takeTurn method, it always rolls at least once
- * on it's turn)
+ * (it always rolls at least once on it's turn as long as the game is not over)
  * 
  * @author Spencer Dent
  * @version 2021-07-10
@@ -20,7 +19,7 @@ public class AdvancedStrategy implements PigStrategy {
 	/**
 	 * Using the parameters passed in, decides whether the player should roll again.
 	 * 
-	 * @param numberOfRollsSoFar   - the number of rolls make this turn
+	 * @param numberOfRollsSoFar   - the number of rolls made this turn
 	 * @param pointsSoFarThisTurn  - the number of points currently scored by the
 	 *                             player this round
 	 * @param pointsToGoal         - how many more points the player needs until
