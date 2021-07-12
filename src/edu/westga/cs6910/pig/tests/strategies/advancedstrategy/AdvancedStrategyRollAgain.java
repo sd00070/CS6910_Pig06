@@ -125,7 +125,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnFalseWhenComputerPlayerNeedsFewerNumberOfRollsToWin() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 92, 100);
+		boolean result = this.theStrategy.rollAgain(1, 8, 92, 100);
 		assertEquals(false, result);
 	}
 
@@ -164,7 +164,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnFalseWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsGreaterThan7() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 63, 63);
+		boolean result = this.theStrategy.rollAgain(2, 14, 86, 86);
 		assertEquals(false, result);
 	}
 }
