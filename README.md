@@ -11,3 +11,9 @@
 
 ## Extra tests
 > I'm finding that some of my initial tests are a bit flakey, and they don't interfere with each other enough. Instead of changing or removing the tests I already have (as they are valid & useful for regression testing), I'm going to add more tests to challenge the model's implementation. Example: the computer player should always roll if the player is within 7 points of winning, even if the computer is ahead. I'm assuming it wouldn't be a problem to make my tests more robust.
+
+## Computer Always Rolls at least once unless the Game is Over
+> I'm assuming the computer player should always roll the dice at least once as long as the game is not over. It would not do the computer any good to not roll the dice at all. As such, a test must be made to back that assumption.
+
+## Some of my tests required changing
+> The instructions state not to change previous, valid tests, but one of the requirements invalidated some of my tests. Changing those specific tests should not change the results, but it will allow for more tests to be added in the future. In specific, many of my tests were passing 0 into the `numberOfRollsSoFar` parameter (even on tests expecting the method to return false). Adding the "always roll at least once as long as the game isn't over" rule caused a contradiction.
