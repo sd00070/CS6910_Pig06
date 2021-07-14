@@ -169,13 +169,21 @@ public class AdvancedStrategyRollAgain {
 	}
 
 	/**
-	 * Test to the edge case of the two players having the same number of whole
-	 * rolls left greater than 7, should return false. This is to prevent an
-	 * off-by-one error.
+	 * Test edge case of the two players having the same number of whole rolls left
+	 * greater than 7, should return false. This is to prevent an off-by-one error.
 	 */
 	@Test
 	public void testShouldReturnFalseWhenBothPlayersAreLessThanAWholeRollAwayFromHavingOnly7RollsLeft() {
 		boolean result = this.theStrategy.rollAgain(1, 7, 50, 50);
 		assertEquals(false, result);
+	}
+
+	/**
+	 * Test edge case where players are nearly within the same whole roll.
+	 */
+	@Test
+	public void testShouldReturnTrueWhenComputerIsAlmostWithinTheSameWholeRollAsHuman() {
+		boolean result = this.theStrategy.rollAgain(1, 7, 50, 49);
+		assertEquals(true, result);
 	}
 }
