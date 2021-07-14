@@ -2,4 +2,4 @@
 
 * [x] add tests for "same number of rolls, less than or equal to 7" case
     * [?] implement functionality
-* [ ] add test to prevent off-by-1 error in number of whole rolls left
+* [x] add test to prevent off-by-1 error in number of whole rolls left
