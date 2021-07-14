@@ -53,11 +53,11 @@ public class AdvancedStrategy implements PigStrategy {
 
 		final int AVERAGE_ROLL = 7;
 
-		if ((pointsToGoal / AVERAGE_ROLL) < (opponentPointsToGoal / AVERAGE_ROLL)) {
+		if (((pointsToGoal + 6) / AVERAGE_ROLL) < ((opponentPointsToGoal + 6) / AVERAGE_ROLL)) {
 			return false;
 		}
 
-		if (((pointsToGoal / AVERAGE_ROLL) == (opponentPointsToGoal / AVERAGE_ROLL))
+		if ((((pointsToGoal + 6) / AVERAGE_ROLL) == ((opponentPointsToGoal + 6) / AVERAGE_ROLL))
 				&& (((pointsToGoal + 6) / AVERAGE_ROLL) > 7)) {
 			return false;
 		}
