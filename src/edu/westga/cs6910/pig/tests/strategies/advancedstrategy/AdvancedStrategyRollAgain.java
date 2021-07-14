@@ -167,4 +167,15 @@ public class AdvancedStrategyRollAgain {
 		boolean result = this.theStrategy.rollAgain(2, 14, 86, 86);
 		assertEquals(false, result);
 	}
+
+	/**
+	 * Test to the edge case of the two players having the same number of whole
+	 * rolls left greater than 7, should return false. This is to prevent an
+	 * off-by-one error.
+	 */
+	@Test
+	public void testShouldReturnFalseWhenBothPlayersAreLessThanAWholeRollAwayFromHavingOnly7RollsLeft() {
+		boolean result = this.theStrategy.rollAgain(1, 7, 50, 50);
+		assertEquals(false, result);
+	}
 }
