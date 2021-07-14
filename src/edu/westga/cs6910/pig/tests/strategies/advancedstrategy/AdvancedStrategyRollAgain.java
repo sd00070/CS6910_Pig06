@@ -107,7 +107,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnTrueWhenHumanPlayerIsExactly7PointsAwayFromTheGoal() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 100, 7);
+		boolean result = this.theStrategy.rollAgain(1, 7, 93, 7);
 		assertEquals(true, result);
 	}
 
@@ -116,7 +116,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnTrueWhenHumanPlayerIsLessThan7PoinstAwayFromTheGoal() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 100, 3);
+		boolean result = this.theStrategy.rollAgain(1, 7, 93, 3);
 		assertEquals(true, result);
 	}
 
@@ -134,7 +134,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnTrueWhenComputerPlayerNeedsGreaterNumberOfRollsToWin() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 100, 92);
+		boolean result = this.theStrategy.rollAgain(1, 3, 97, 86);
 		assertEquals(true, result);
 	}
 
@@ -144,7 +144,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnTrueWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsEqualTo7() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 49, 49);
+		boolean result = this.theStrategy.rollAgain(1, 7, 49, 49);
 		assertEquals(true, result);
 	}
 
@@ -154,7 +154,7 @@ public class AdvancedStrategyRollAgain {
 	 */
 	@Test
 	public void testShouldReturnTrueWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsLessThan7() {
-		boolean result = this.theStrategy.rollAgain(0, 0, 30, 30);
+		boolean result = this.theStrategy.rollAgain(1, 7, 30, 30);
 		assertEquals(true, result);
 	}
 
