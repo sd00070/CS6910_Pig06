@@ -5,10 +5,10 @@ package edu.westga.cs6910.pig.model.strategies;
  * game has just begun, the player's opponent is within 7 points of winning, it
  * requires more rolls than its opponent to win, or it has the same number of
  * whole rolls remaining as its opponent and the players' current turn roll
- * average is less than or equal to 7. It holds if either player has reached the
- * goal, it needs fewer rolls that its opponent to win (the "opponent within 7
- * points" rule overrides the "fewer rolls" rule), or the tied current-turn,
- * whole-roll average is greater than 7.
+ * average is less than 7. It holds if either player has reached the goal, it
+ * needs fewer rolls that its opponent to win (the "opponent within 7 points"
+ * rule overrides the "fewer rolls" rule), or the tied current-turn, whole-roll
+ * average is greater than or equal to 7.
  * 
  * (it always rolls at least once on it's turn as long as the game is not over)
  * 
