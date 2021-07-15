@@ -31,6 +31,20 @@ public class AdvancedStrategy implements PigStrategy {
 	}
 
 	/**
+	 * Returns the number of whole rolls needed for the player to reach the goal
+	 * using a typical roll of 7.
+	 * 
+	 * @param pointsToGoal - haw many points the player needs until they have
+	 *                     reached the goal of the game
+	 * @return number of whole rolls needed to win
+	 */
+	private int getWholeRollsLeft(int pointsToGoal) {
+		final double TYPICAL_DICE_ROLL = 7.0;
+
+		return (int) Math.ceil(((double) pointsToGoal) / TYPICAL_DICE_ROLL);
+	}
+
+	/**
 	 * Using the parameters passed in, decides whether the player should roll again.
 	 * 
 	 * @param numberOfRollsSoFar   - the number of rolls made this turn
@@ -53,10 +67,8 @@ public class AdvancedStrategy implements PigStrategy {
 			return true;
 		}
 
-		final double TYPICAL_DICE_ROLL = 7.0;
-
-		final int WHOLE_ROLLS_LEFT = (int) Math.ceil(((double) pointsToGoal) / TYPICAL_DICE_ROLL);
-		final int OPPONENT_WHOLE_ROLLS_LEFT = (int) Math.ceil(((double) opponentPointsToGoal) / TYPICAL_DICE_ROLL);
+		final int WHOLE_ROLLS_LEFT = this.getWholeRollsLeft(pointsToGoal);
+		final int OPPONENT_WHOLE_ROLLS_LEFT = this.getWholeRollsLeft(opponentPointsToGoal);
 
 		if (WHOLE_ROLLS_LEFT < OPPONENT_WHOLE_ROLLS_LEFT) {
 			return false;
