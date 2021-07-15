@@ -4,10 +4,11 @@ package edu.westga.cs6910.pig.model.strategies;
  * This pig game-play strategy causes the player that uses it to roll if: the
  * game has just begun, the player's opponent is within 7 points of winning, it
  * requires more rolls than its opponent to win, or it has the same number of
- * rolls remaining as its opponent and the number of rolls is less than or equal
- * to 7. It holds if either player has reached the goal or it needs fewer rolls
- * that its opponent to win (the "opponent within 7 points" rule overrides the
- * "fewer rolls" rule).
+ * whole rolls remaining as its opponent and the players' current turn roll
+ * average is less than or equal to 7. It holds if either player has reached the
+ * goal, it needs fewer rolls that its opponent to win (the "opponent within 7
+ * points" rule overrides the "fewer rolls" rule), or the tied current-turn,
+ * whole-roll average is greater than 7.
  * 
  * (it always rolls at least once on it's turn as long as the game is not over)
  * 
