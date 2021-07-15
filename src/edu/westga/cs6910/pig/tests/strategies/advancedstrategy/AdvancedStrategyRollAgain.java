@@ -158,12 +158,22 @@ public class AdvancedStrategyRollAgain {
 	}
 
 	/**
-	 * Test for when both payers have the same number of whole rolls left, and the
+	 * Test for when both players have the same number of whole rolls left, and the
 	 * player's current-turn average score is greater than 7
 	 */
 	@Test
 	public void testShouldReturnFalseWhenBothPlayersHaveSameNumberOfWholeRollsAndPlayerCurrentTurnAverageIsGreaterThan7() {
 		boolean result = this.theStrategy.rollAgain(1, 8, 92, 92);
 		assertEquals(false, result);
+	}
+
+	/**
+	 * Test for when both players have the same number of whole rolls left, and the
+	 * player's current-turn average score is less than 7.
+	 */
+	@Test
+	public void testShouldReturnTrueWhenBothPlayersHaveSameNumberOfWholeRollsAndPlayerCurrentTurnAverageIsLessThan7() {
+		boolean result = this.theStrategy.rollAgain(1, 6, 94, 94);
+		assertEquals(true, result);
 	}
 }
