@@ -53,14 +53,18 @@ public class AdvancedStrategy implements PigStrategy {
 			return true;
 		}
 
-		final int AVERAGE_ROLL = 7;
+		final double TYPICAL_DICE_ROLL = 7.0;
 
-		if (((pointsToGoal + 6) / AVERAGE_ROLL) < ((opponentPointsToGoal + 6) / AVERAGE_ROLL)) {
+		final int WHOLE_ROLLS_LEFT = (int) Math.ceil(((double) pointsToGoal) / TYPICAL_DICE_ROLL);
+		final int OPPONENT_WHOLE_ROLLS_LEFT = (int) Math.ceil(((double) opponentPointsToGoal) / TYPICAL_DICE_ROLL);
+
+		if (WHOLE_ROLLS_LEFT < OPPONENT_WHOLE_ROLLS_LEFT) {
 			return false;
 		}
 
-		if ((((pointsToGoal + 6) / AVERAGE_ROLL) == ((opponentPointsToGoal + 6) / AVERAGE_ROLL))
-				&& (((pointsToGoal + 6) / AVERAGE_ROLL) > 7)) {
+		final double CURRENT_TURN_AVERAGE = (double) pointsSoFarThisTurn / (double) numberOfRollsSoFar;
+
+		if (WHOLE_ROLLS_LEFT == OPPONENT_WHOLE_ROLLS_LEFT && CURRENT_TURN_AVERAGE >= 7.0) {
 			return false;
 		}
 
