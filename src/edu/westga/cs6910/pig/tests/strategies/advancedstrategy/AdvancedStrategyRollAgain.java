@@ -139,46 +139,6 @@ public class AdvancedStrategyRollAgain {
 	}
 
 	/**
-	 * Test for when the number of rolls needed (using average roll score) to win is
-	 * the same for both players and is exactly 7.
-	 */
-	@Test
-	public void testShouldReturnTrueWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsEqualTo7() {
-		boolean result = this.theStrategy.rollAgain(1, 7, 49, 49);
-		assertEquals(true, result);
-	}
-
-	/**
-	 * Test for when the number of rolls needed (using average roll score) to win is
-	 * the same for both players and is less than 7.
-	 */
-	@Test
-	public void testShouldReturnTrueWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsLessThan7() {
-		boolean result = this.theStrategy.rollAgain(1, 7, 30, 30);
-		assertEquals(true, result);
-	}
-
-	/**
-	 * Test for when the number of rolls needed (using average roll score) to win is
-	 * the same for both players and is greater than 7.
-	 */
-	@Test
-	public void testShouldReturnFalseWhenBothPlayersNeedSameNumberOfRollsAndNumberOfRollsIsGreaterThan7() {
-		boolean result = this.theStrategy.rollAgain(2, 14, 86, 86);
-		assertEquals(false, result);
-	}
-
-	/**
-	 * Test edge case of the two players having the same number of whole rolls left
-	 * greater than 7, should return false. This is to prevent an off-by-one error.
-	 */
-	@Test
-	public void testShouldReturnFalseWhenBothPlayersAreLessThanAWholeRollAwayFromHavingOnly7RollsLeft() {
-		boolean result = this.theStrategy.rollAgain(1, 7, 50, 50);
-		assertEquals(false, result);
-	}
-
-	/**
 	 * Test edge case where players are nearly within the same whole roll.
 	 */
 	@Test
