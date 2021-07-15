@@ -18,6 +18,19 @@ package edu.westga.cs6910.pig.model.strategies;
 public class AdvancedStrategy implements PigStrategy {
 
 	/**
+	 * Returns whether either player has reached or passed the goal score.
+	 * 
+	 * @param pointsToGoal         - how many more points the player needs until
+	 *                             they have reach the goal of the game
+	 * @param opponentPointsToGoal - how close the other player is to reaching the
+	 *                             goal
+	 * @return whether or not either player has won the game
+	 */
+	private boolean eitherPlayerHasWon(int pointsToGoal, int opponentPointsToGoal) {
+		return pointsToGoal <= 0 || opponentPointsToGoal <= 0;
+	}
+
+	/**
 	 * Using the parameters passed in, decides whether the player should roll again.
 	 * 
 	 * @param numberOfRollsSoFar   - the number of rolls made this turn
@@ -32,19 +45,7 @@ public class AdvancedStrategy implements PigStrategy {
 	public boolean rollAgain(int numberOfRollsSoFar, int pointsSoFarThisTurn, int pointsToGoal,
 			int opponentPointsToGoal) {
 
-		if (pointsToGoal == 0) {
-			return false;
-		}
-
-		if (pointsToGoal < 0) {
-			return false;
-		}
-
-		if (opponentPointsToGoal == 0) {
-			return false;
-		}
-
-		if (opponentPointsToGoal < 0) {
+		if (this.eitherPlayerHasWon(pointsToGoal, opponentPointsToGoal)) {
 			return false;
 		}
 
